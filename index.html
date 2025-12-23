@@ -21,7 +21,7 @@
                     <label class="inner_card_header_label" for="translation-input" >Text to Translate <img src="assets/pointing-down.png" alt="" class="pointer-icon"></label>
                     <textarea name="translation_box" id="translation-input" placeholder="How are you?"></textarea>
                     
-                    <form action="/submit-page" method="post">
+                    <form id="translation-form" action="/submit-page" method="post">
 
                         <h3 class="inner_card_header_label">Select language <img src="assets/pointing-down.png" alt="" class="pointer-icon"></h3>
 
@@ -45,10 +45,19 @@
                             </div>
 
                         </div>
-                        <button id="btn-trigger" type="submit" class="btn-translate">Translate</button>
+                        <button id="btn-translate" type="submit" class="btn-translate">Translate</button>
 
                     </form>
 
+                    <p id="status" class="status" aria-live="polite"></p>
+                    
+                    <div id="result" class="result" hidden>
+                        <h3 class="inner_card_header_label">Translation <img src="assets/pointing-down.png" alt="" class="pointer-icon"></h3>
+                        <textarea name="translation_box" id="result-text" readonly></textarea>
+                        
+                        <button id="btn-start-over" type="button" class="btn-translate">Start Over</button>
+                    </div>
+                    
                 </div>
 
             </div>
