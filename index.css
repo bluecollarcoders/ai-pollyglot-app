@@ -1,0 +1,154 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --main-font: 'Poppins', sans-serif;
+    --heading-font: 'Inter', sans-serif;
+    --display-font: "Big Shoulders", sans-serif;
+    --primary-color: #035A9D;
+    --secondary-color: #EFF0F4;
+    --accent-color: #32CD32;
+    --text-color-1: #FFFFFF;
+    --text-color-2: #333333;
+    --background: #fefbea;
+    --border-color: #252F42;
+    --base-color: #FFFFFF;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--main-font);
+    background-color: var(--background);
+}
+
+.background_splash {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.card_body {
+    width: 390px;
+    background-color: #FFFFFF;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: contain;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 40px 25px;
+    background-color: #0D182E;
+    background-image: url('assets/worldmap.png');
+    width: 390px;
+    height: 213px;
+}
+
+.logo {
+    width: 95px;
+    height: auto;
+}
+
+.header-text h1 {
+    font-family: var(--display-font);
+    color: var(--accent-color);
+}
+
+.header-text p {
+    color: var(--text-color-1);
+}
+
+.inner_card {
+    background-color: var(--base-color);
+    margin: 0 15px 15px 15px;
+    margin-top: 20px;
+    padding: 25px;
+    width: 362px;
+    height: 505px;
+    border: 4px solid var(--border-color);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.inner_card_header_label {
+    display: flex;
+    align-items: center;    /* Snaps icon to the vertical center of the text */
+    justify-content: center; /* Centers the whole group inside the card */
+    gap: 8px;               /* Precise spacing between text and image */
+    
+    color: var(--primary-color);
+    font-size: 18px;        /* Based on the Figma spec for headers */
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+/* Specific styling for the pointing hand */
+.pointer-icon {
+    width: 22px;
+    height: auto;
+    padding-top: 5px;
+    flex-shrink: 0; 
+}
+
+.radio-option {
+    display: flex;
+    align-items: center; /* Vertically centers the dot with the text/flag */
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.radio-option label {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between text and flag */
+    font-size: 16px;
+    color: var(--text-color-2);
+}
+
+.flag-icon {
+    width: 25px;
+    height: auto;
+}
+
+.btn-translate {
+    width: 100%;
+    background-color: #035A9D; /* Match your --primary-color */
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-family: var(--main-font);
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn-translate:hover {
+    background-color: #024a80; /* Slightly darker for interaction */
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    background-color: #f3f3f3; /* Light gray background from design */
+    border: none;
+    border-radius: 8px;
+    padding: 15px;
+    font-family: inherit;
+    resize: none; /* Prevents users from breaking your layout */
+}
