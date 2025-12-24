@@ -112,3 +112,37 @@ This project serves as a practical portfolio piece demonstrating core skills in 
 - **Production Deployment**: Taking a web application from development to a live, public URL.
 - **API Safety and Security**: Implementing rate limiting and using environment variables for secrets.
 - **Full-Stack Integration**: Connecting a JavaScript frontend to a serverless backend API.
+
+## Future Improvements
+
+- **Streaming translations**
+  - Implement Server-Sent Events (SSE) for token-by-token translation updates
+  - Improve perceived performance for longer inputs
+
+- **Persistent rate limiting**
+  - Replace in-memory rate limiting with Redis or Upstash for production-scale limits
+
+- **React frontend**
+  - Refactor UI into reusable React components
+  - Improve state management and loading transitions
+
+- **Language auto-detection**
+  - Automatically detect source language before translation
+
+- **Authentication**
+  - Add optional user accounts with per-user rate limits
+
+- **Improved error telemetry**
+  - Add logging and monitoring via Vercel Analytics or Sentry
+
+## What I Learned
+
+This project reinforced several real-world engineering lessons:
+
+- Serverless APIs behave differently than long-running servers
+- Environment variables must be configured per-deployment
+- Rate limiting is essential when exposing paid APIs
+- Debugging production requires understanding deployment platforms
+- Simple architectures are often the most reliable
+
+Most importantly, I learned how to confidently ship an AI-powered feature end-to-end — from UI to production deployment.
