@@ -51,6 +51,7 @@ export default async function handler(req, res) {
     try {
         const response = await client.responses.create({
             model: "gpt-4.1-mini",
+            temperature: 0.2,
             input: [
                 {
                     role: "system",
