@@ -18,41 +18,48 @@
 
                 <div class="inner_card">
 
-                    <label class="inner_card_header_label" for="translation-input" >Text to Translate <img src="assets/pointing-down.png" alt="" class="pointer-icon"></label>
-                    <textarea name="translation_box" id="translation-input" placeholder="How are you?"></textarea>
-                    
-                    <form id="translation-form" action="/submit-page" method="post">
+                    <div id="compose-view">
 
-                        <h3 class="inner_card_header_label">Select language <img src="assets/pointing-down.png" alt="" class="pointer-icon"></h3>
+                        <label id="original-label" class="inner_card_header_label" for="translation-input" >Text to Translate <img src="assets/pointing-down.png" alt="" class="pointer-icon"></label>
+                        <textarea name="translation_box" id="translation-input" placeholder="How are you?"></textarea>
+                        
+                        <form id="translation-form" action="/submit-page" method="post">
 
-                        <div class="radio-group">
+                            <h3 class="inner_card_header_label">Select language <img src="assets/pointing-down.png" alt="" class="pointer-icon"></h3>
 
-                            <div class="radio-option">
-                                <input type="radio" id="french" name="language" value="french">
-                                <label for="french">French <img src="assets/fr-flag.png" alt="" class="flag-icon"></label> 
+                            <div class="radio-group">
+
+                                <div class="radio-option">
+                                    <input type="radio" id="french" name="language" value="french">
+                                    <label for="french">French <img src="assets/fr-flag.png" alt="" class="flag-icon"></label> 
+                                </div>
+
+                                
+                                <div class="radio-option">
+                                    <input type="radio" id="spanish" name="language" value="spanish">
+                                    <label for="spanish">Spanish <img src="assets/sp-flag.png" alt="" class="flag-icon"></label>  
+                                </div>
+
+                                
+                                <div class="radio-option">
+                                    <input type="radio" id="japanese" name="language" value="japanese">
+                                    <label for="japanese">Japanese <img src="assets/jpn-flag.png" alt="" class="flag-icon"></label>  
+                                </div>
+
                             </div>
+                            <button id="btn-translate" type="submit" class="btn-translate">Translate</button>
 
-                            
-                            <div class="radio-option">
-                                 <input type="radio" id="spanish" name="language" value="spanish">
-                                <label for="spanish">Spanish <img src="assets/sp-flag.png" alt="" class="flag-icon"></label>  
-                            </div>
+                        </form>
+                    </div>
 
-                            
-                            <div class="radio-option">
-                                <input type="radio" id="japanese" name="language" value="japanese">
-                                <label for="japanese">Japanese <img src="assets/jpn-flag.png" alt="" class="flag-icon"></label>  
-                            </div>
 
-                        </div>
-                        <button id="btn-translate" type="submit" class="btn-translate">Translate</button>
 
-                    </form>
+                        <p id="status" class="status" aria-live="polite"></p>
 
-                    <p id="status" class="status" aria-live="polite"></p>
-                    
-                    <div id="result" class="result" hidden>
-                        <h3 class="inner_card_header_label">Translation <img src="assets/pointing-down.png" alt="" class="pointer-icon"></h3>
+                    <div id="result" hidden>
+                        <h3 class="inner_card_header_label">Original Text <img src="assets/pointing-down.png" alt="" class="pointer-icon"></h3>
+                        <textarea id="original-text" readonly></textarea>
+                        <h3 class="inner_card_header_label">Your Translation <img src="assets/pointing-down.png" alt="" class="pointer-icon"></h3>
                         <textarea name="translation_box" id="result-text" readonly></textarea>
                         
                         <button id="btn-start-over" type="button" class="btn-translate">Start Over</button>
