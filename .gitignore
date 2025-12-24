@@ -7,9 +7,11 @@ build/
 
 # environment files (secrets)
 .env
+.env.local
 .env.*
 !.env.example
 
 # OS/editor junk
 .DS_Store
 .vscode/
+.vercel
