@@ -9,7 +9,7 @@ const startOverBtn = document.getElementById("btn-start-over");
 const originalTextNode = document.getElementById('original-text');
 const composeView = document.getElementById("compose-view");
 
-function handleTranslation(e) {
+async function handleTranslation(e) {
     e.preventDefault();
 
     // Use the FormData API to get values easily.
@@ -30,10 +30,15 @@ function handleTranslation(e) {
         return;
     }
 
-    setStatus("Translating....");
-    const translated = fakeTranslate(textToTranslate, selectedLanguage);
-    enterResultMode({original: textToTranslate, translated});
-    setStatus("");
+    try {
+        setStatus("Translating....");
+        const translated = await translateViaApi(textToTranslate, selectedLanguage);
+        enterResultMode({original: textToTranslate, translated});
+        setStatus(""); 
+    } catch (err) {
+        setStatus(err.message || "Something went wrong.");
+    }
+
 }
 
 translationForm.addEventListener('submit', handleTranslation);
@@ -89,6 +94,29 @@ function enterComposeMode() {
     translationInput.focus();
 }
 
-function fakeTranslate(text, language) {
-  return `[${language}] ${text}`;
+async function translateViaApi(text, language) {
+    const res = await fetch("/api/translate", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        }, 
+        body: JSON.stringify({text, language}),
+    });
+
+    // If server returns 4xx/5xx, fetch does NOT throw — you must check.
+    if (!res.ok) {
+        // Optional: try to read a JSON error message.
+        let message = `Request failed (${res.status})`;
+        try {
+            const data = await res.json();
+            if (data?.error) message = data.error;
+        } catch (_) {}
+        throw new Error(message);
+    }
+
+    const data = await res.json();
+
+    // This matches option B
+    return data.translatedText;
 }
+

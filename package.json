@@ -2,13 +2,19 @@
   "name": "Polygott app",
   "description": "https://scrimba.com/the-ai-engineer-path-c02v/~0o",
   "scripts": {
-    "start": "vite",
     "dev": "vite",
+    "dev:api": "node server/index.js",
+    "dev:all": "concurrently \"npm run dev\" \"npm run dev:api\"",
     "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "openai": "^6.15.0",
     "vite": "latest"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
 }

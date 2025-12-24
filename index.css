@@ -14,6 +14,7 @@
     --background: #fefbea;
     --border-color: #252F42;
     --base-color: #FFFFFF;
+    --header-color: #0D182E;
 }
 
 * {
@@ -37,7 +38,7 @@ body {
 
 .card_body {
     width: 390px;
-    background-color: #FFFFFF;
+    background-color: var(--base-color);
     background-repeat: no-repeat;
     background-position: top;
     background-size: contain;
@@ -48,7 +49,7 @@ body {
     align-items: center;
     gap: 15px;
     padding: 40px 25px;
-    background-color: #0D182E;
+    background-color: var(--header-color);
     background-image: url('assets/worldmap.png');
     width: 390px;
     height: 213px;
@@ -124,7 +125,7 @@ body {
 
 .btn-translate {
     width: 100%;
-    background-color: #035A9D; /* Match your --primary-color */
+    background-color: var(--primary-color);
     color: white;
     border: none;
     padding: 12px;
