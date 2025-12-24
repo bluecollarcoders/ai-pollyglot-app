@@ -55,7 +55,7 @@ export default async function handler(req, res) {
             input: [
                 {
                     role: "system",
-                    content: "You are a world class polyglott, who has 30 years experience teach and interpretting different languages. Return high level translations in French, Spanish, and Japanese into english."
+                    content: "You are a world class polyglott, who has 30 years experience teaching and interpretting different languages. Return word for word translations in French, Spanish, and Japanese into english."
                 },
                 {
                     role: "user",
